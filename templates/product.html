@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Product
+{% endblock %}
+
+{% block body %}
+    <h1>Product Information</h1>
+
+    <h2>Description: {{ product.description }}</h2>
+
+    <h2>Location History: </h2>
+        {% for location in locations %}
+            <li>
+                {{ location.datetime }}
+                {{ location.longitute }}
+                {{ location.latitude }}
+                {{ location.elevation }}
+            </li>
+        {% else %}
+            <li>No locations.</li>
+        {% endfor %}
+
+    <form action="{{ url_for('index') }}" method="GET">
+        <div class="form-group">
+            <button class="btn btn-primary">Back</button>
+        </div>
+    </form>
+
+{% endblock %}

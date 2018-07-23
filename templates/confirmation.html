@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Location Added
+{% endblock %}
+
+{% block body %}
+    <h1>You have added a new location for: </h1>
+    {{ description }}
+
+    <form action="{{ url_for('index') }}" method="GET">
+        <div class="form-group">
+            <button class="btn btn-primary">Back</button>
+        </div>
+    </form>
+
+{% endblock %}
